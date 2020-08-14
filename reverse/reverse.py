@@ -38,5 +38,20 @@ class LinkedList:
 
         return False
 
-    def reverse_list(self, node, prev):
-        pass
+    def reverse_list(self, node, poorly_structured_unitest):
+        curr = node
+        prev = None
+        while curr:
+            nn = curr.next_node
+            curr.next_node = prev
+            prev = curr
+            curr = nn
+        self.head = prev
+
+
+        # if node or node.next_node == None:
+        #     return node
+        # remaining = self.reverse_list(node.next_node, None)
+        # node.next_node.next_node = node
+        # node.next_node = None
+        # return remaining
